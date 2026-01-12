@@ -1,0 +1,130 @@
+#hourly div {
+  background-color: transparent;
+}
+#hourly {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px rgba(255, 255, 255, 0.2) solid;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  flex-shrink: 0;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#hourly>h4 {
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-size: xx-large;
+  margin-bottom: 10px !important;
+}
+#hourly>h4 i {
+  color: cornflowerblue;
+}
+#hourly-weather {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  max-width: 915px;
+  overflow-x: auto;
+}
+#hourly-weather::-webkit-scrollbar {
+  height: 7px;
+}
+#hourly-weather::-webkit-scrollbar-track {
+  background: transparent;
+}
+#hourly-weather::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  border-radius: 5px;
+}
+#hourly-weather::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+#hourly-weather::-webkit-scrollbar-button {
+  background: transparent;
+  cursor: pointer;
+  width: 0px;
+  height: 0px;
+}
+.hour {
+    display:flex;
+    flex-direction: column;
+    min-width: 180px;
+    background-color: rgba(0, 0, 0, 0.15) !important;
+    padding: 15px 0;
+    border-radius: 20px;
+    gap: 2px;
+}
+.hour .small {
+  margin-bottom: 2px !important;
+  color: #49baa7;
+  margin-top: 12px !important;
+  font-size: 14px;
+}
+.hour i {
+  color: #ffef40e3;
+  font-size: 15px;
+}
+.hour h4 {
+  font-size: 22px !important;
+  font-weight: 500 !important;
+}
+.hour #temp {
+  margin-bottom: 20px !important;
+  margin-top: 10px !important;
+  font-size: 35px;
+}
+.hour #hour {
+  letter-spacing: 5px;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(222, 222, 222, 0.897);
+}
+#hourly-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+#dates {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0 30px 0 10px;
+  border-right: 2px rgba(255, 255, 255, 0.783) solid;
+}
+#dates button {
+  border: none;
+  padding: 3px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 12px;
+  font-weight: lighter;
+  letter-spacing: 0.2px;
+  color: rgba(255, 222, 222, 0.7);
+}
+#dates span {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+#dates button.active {
+  color: white !important;
+  box-shadow: rgba(255, 255, 255, 0.8) 0px 0px 10px 0px;
+}
+#dates button:hover {
+  color: white !important;
+}
+#dates button.active span {
+  color: white !important;
+}
+#dates button:hover span {
+  color: white !important;
+}

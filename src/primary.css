@@ -1,0 +1,137 @@
+#left1 {
+  flex-grow: 1 !important;
+  height: 220px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px rgba(255, 255, 255, 0.2) solid;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  justify-content: space-between;
+}
+#left1 div {
+  background-color: transparent;
+}
+#left11 {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+#left111 {
+  height: 82%;
+  background-color: rgba(0, 0, 0, 0.15) !important;
+  padding: 15px 30px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#left111>h1 {
+    font-size: 60px;
+    font-weight: 200 !important;
+}
+#left111>h1>span {
+    font-size: 30px;
+    font-weight: 100 !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+#left112 {
+  height: 18%;
+}
+#left112 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20px;
+}
+#left112 p {
+  letter-spacing: 3px;
+  font-size: 20px;
+  font-weight: 300;
+  /* color: rgba(222, 222, 222, 0.897); */
+  color: rgba(255, 222, 222, 0.7);
+}
+#city-name {
+    text-transform: capitalize;
+    font-size: 25px !important;
+    color: rgba(255, 222, 222, 0.9) !important;
+}
+#left1111 {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+  margin-right: 30px;
+}
+#left1111>div i {
+    font-size: 45px;
+    color: #ffef40e3;
+}
+#left1111 p {
+    color: #63dac6;
+    font-size: 25px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+#left12 {
+  width: 30%;
+  background-color: rgba(0, 0, 0, 0.15) !important;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#left12>div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+#left12>div i {
+  color: #ffef40e3;
+  font-size: 20px;
+}
+#left12>div p {
+  color: #49baa7;
+  font-size: 18px;
+  font-weight: 100;
+}
+#left12>div h1 {
+    font-weight: lighter;
+    font-size: 50px;
+}
+#left12>div h5 {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+
+
+/* .daily-weather p {
+  margin-bottom: 5px !important;
+  color: #49baa7;
+}
+.daily i {
+  color: #ffef40e3;
+  font-size: 17px;
+}
+#right>h4>i {
+  color:cornflowerblue
+} */

@@ -1,0 +1,118 @@
+#modal-form {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#form-box {
+  min-width: 500px;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(30px);
+  box-shadow: rgba(79, 79, 79, 0.726) 0px 0px 30px 10px;
+  border: 2px rgba(255, 255, 255, 0.3) solid;
+  padding: 20px 50px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+#form-box > h3 {
+  background-color: transparent;
+  font-size: 40px;
+  font-weight: lighter;
+  text-align: center;
+  margin-bottom: 30px !important;
+}
+.input-group {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.input-group input {
+  width: 100% !important;
+  border-radius: 20px;
+  padding: 20px;
+  border: none;
+  font-size: 20px;
+  color: white;
+  transition: all 0.1s ease;
+  background-color: transparent;
+}
+/* The Label (The floating text) */
+.input-group label {
+  position: absolute !important;
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent; /* MUST match the parent background color */
+  padding: 0 10px !important;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 20px;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+/* When input is FOCUSED OR 
+   When input is NOT EMPTY (:not(:placeholder-shown))
+   Move the label up!
+*/
+#pass-input input:focus + label, 
+#pass-input input:not(:placeholder-shown) + label {
+  top: 0 !important; /* Moves it to the top border line */
+  font-size: 16px;
+  color: white;
+  font-weight: bolder ;
+  background-color: rgba(52, 46, 67, 0.7) !important;
+  backface-visibility: hidden;
+}
+#name-input input:focus + label, 
+#name-input input:not(:placeholder-shown) + label {
+  top: 0 !important; /* Moves it to the top border line */
+  font-size: 16px;
+  color: white;
+  font-weight: bolder ;
+  background-color: rgba(52, 46, 67, 0.822) !important;
+  backface-visibility: hidden;
+}
+
+.input-group input:focus {
+  outline: none;
+}
+.input-group:focus-within {
+  box-shadow: rgba(255, 255, 255, 0.79) 0px 0px 5px 0px;
+}
+#form-box p {
+  background-color: transparent;
+  font-size: 15px;
+  font-weight: lighter;
+  opacity: 0.7;
+}
+#submit {
+  margin-top: 30px;
+  background-color: rgb(154, 19, 19);
+  padding: 15px 25px;
+  border: none;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+#submit:hover {
+  box-shadow: 0 0 10px 1px rgb(186, 186, 186);
+}
