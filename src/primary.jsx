@@ -1,7 +1,41 @@
 import "./primary.css";
 import Compass from "./compass.jsx";
+import { useEffect, useState } from "react";
+
+async function fetchAQI(cityName) {
+  const token = "fdadfa32e204d5a9f2a1cda30ac193a7dd15afa3";
+
+  try {
+    const res = await fetch(
+      `https://api.waqi.info/feed/${encodeURIComponent(cityName)}/?token=${token}`,
+    );
+    const data = await res.json();
+
+    // If API returns ok, return AQI number, else 0
+    return data.status === "ok" ? parseInt(data.data.aqi) : -1;
+  } catch (err) {
+    console.error("Error fetching AQI:", err);
+    return -1; // network error or any other issue
+  }
+}
 
 export default function Primary({ weather, city, monthnames }) {
+  const [aqi, setAqi] = useState(-1);
+
+  useEffect(() => {
+    let active = true;
+    if (!city) {
+      setAqi(-1);
+      return;
+    }
+    fetchAQI(city).then((val) => {
+      if (active) setAqi(val);
+    });
+    return () => {
+      active = false;
+    };
+  }, [city]);
+
   // Safety check to prevent errors before data loads
   if (!weather || !weather.currentData) {
     return <></>;
@@ -60,10 +94,17 @@ export default function Primary({ weather, city, monthnames }) {
     <div id="left1">
       <div id="left11">
         <div id="left111">
-          <h1>
-            {tempIcon} {tempValue} <span>°C</span>
-          </h1>
           <div id="left1111">
+            <h1>
+              {tempIcon} {tempValue} <span>°C</span>
+            </h1>
+            {aqi >= 0 && (
+              <h5>
+                <i className="fa-solid fa-lungs"></i>AQI<span>{aqi}</span>
+              </h5>
+            )}
+          </div>
+          <div id="left1112">
             <div>
               {condIcon}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{dayNightIcon}
             </div>
@@ -78,27 +119,14 @@ export default function Primary({ weather, city, monthnames }) {
       </div>
       <div id="left12">
         <div>
-          <p><i className="fa-solid fa-wind"></i> Windspeed</p>
+          <p>
+            <i className="fa-solid fa-wind"></i> Windspeed
+          </p>
           <h1>{windspeed}</h1>
           <h5>Km/h</h5>
         </div>
         <Compass degrees={currentWeather.winddirection} />
       </div>
-
-      {/* <div>
-        <h1>{currentWeather.temperature} {tempIcon}</h1>
-
-        <>{condIcon} {dayNightIcon}</>
-        <p>{currentWeather.description}</p>
-
-
-       
-
-        <p>Windspeed</p>
-        <h3>{currentWeather.windspeed}</h3>
-        <p>Winddirection</p>
-        <h3>{currentWeather.winddirection}</h3>
-      </div> */}
     </div>
   );
 }
